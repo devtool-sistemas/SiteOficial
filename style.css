@@ -1,0 +1,260 @@
+:root {
+    --color1: #38A69B;
+    --color2: #9DA658;
+    --color3: #1D5953;
+    --text-light: #f8f9fa;
+    --text-dark: #343a40;
+    --bg-light: #ffffff;
+    --bg-dark: #212529;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+header {
+    background-color: var(--color3);
+    color: var(--text-light);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header figure {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#logo {
+    height: 50px;
+    width: auto;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--color2);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--color2);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color2);
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+section#home {
+    background: linear-gradient(135deg, var(--color1), var(--color3));
+    color: var(--text-light);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color3);
+}
+
+section#home h2 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+dl {
+    margin-left: 1.5rem;
+}
+
+dt {
+    font-weight: bold;
+    color: var(--color1);
+    margin-top: 1rem;
+}
+
+dd {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.project-highlight {
+    background-color: rgba(61, 166, 155, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--color1);
+}
+
+.innovation-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color3);
+    margin-bottom: 1rem;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background-color: var(--color2);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin-top: 1.5rem;
+}
+
+label {
+    font-weight: 500;
+    color: var(--color3);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color1);
+    box-shadow: 0 0 0 2px rgba(61, 166, 155, 0.2);
+}
+
+button {
+    background-color: var(--color1);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    justify-self: start;
+}
+
+button:hover {
+    background-color: var(--color3);
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    nav ul {
+        margin-top: 0;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    section#about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    section#about > section {
+        margin-bottom: 0;
+    }
+
+    section#projects > section {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    main {
+        padding: 3rem 2rem;
+    }
+
+    section#about {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
